@@ -30,4 +30,4 @@ docker build \
     --build-arg "DOCKER_COMPOSE_VERSION=${DOCKER_COMPOSE_VERSION}" \
     --build-arg "TASK_VERSION=${TASK_VERSION}" \
     -t "${TAG}" \
-    --rm --pull --force-rm - < "${DISTRO}/${ARCH}"
+    --rm --pull --force-rm - < "${DISTRO}/${ARCH}/Dockerfile"
