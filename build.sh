@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -x
 set -e
@@ -9,7 +9,7 @@ set -e
 DOCKERFILE="$1"
 TAG="$2"
 
-. .env
+source ./.env
 
 docker build \
     --build-arg "ALPINE_IMAGE=${ALPINE_IMAGE}" \
