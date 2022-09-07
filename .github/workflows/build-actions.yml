@@ -1,0 +1,16 @@
+name: "Build and publish build images"
+
+on: ['push']
+
+# Env variable
+env:
+  DOCKER_IO_USER: '${{secrets.DOCKER_USER}}'
+  DOCKER_IO_PASSWORD: '${{secrets.DOCKER_PASSWORD}}'
+
+jobs:
+  publish-debian-amd64-image:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - uses: 'actions/checkout@v3'
+    - run: 'docker login -u $DOCKER_IO_USER -p $DOCKER_IO_PASSWORD'
+    - run: './build debian/amd64/Dockerfile docker.io/makasim/build-image:$(printf '%s' "$GITHUB_SHA" | cut -c -8)"-debian-arm64'
