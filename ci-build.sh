@@ -14,7 +14,7 @@ ARCH="$2"
 COMMIT_IMAGE="docker.io/makasim/build-image:$(printf '%s' "$GITHUB_SHA" | cut -c -8)-${DISTRO}-${ARCH}"
 BRANCH_IMAGE="docker.io/makasim/build-image:${GITHUB_REF##*/}-${DISTRO}-${ARCH}"
 
-./build.sh "${DISTRO} "${ARCH}" "${COMMIT_IMAGE}"
+./build.sh "${DISTRO}" "${ARCH}" "${COMMIT_IMAGE}"
 
 docker tag "${COMMIT_IMAGE}" "${BRANCH_IMAGE}"
 docker push "${COMMIT_IMAGE}"
