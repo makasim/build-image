@@ -1,6 +1,10 @@
 # Build image 
 
-todo
+Docker image for testing&building golang applications. It contains often used stuff.
+
+It builds identical alpine\debian images.
+In general, you should prefer alpine based image.
+Debian could be used where cgo, race detector or something similar is needed.
 
 ## Build image locally
 
