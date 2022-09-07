@@ -12,4 +12,15 @@ jobs:
       with:
         username: '${{ secrets.DOCKER_IO_USERNAME }}'
         password: '${{ secrets.DOCKER_IO_PASSWORD }}'
-    - run: './publish-debian-arm64.sh'
+    - run: './publish-debian-amd64.sh'
+
+  publish-alpine-amd64-image:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v3'
+      - name: 'Login to docker.io'
+        uses: 'docker/login-action@v2'
+        with:
+          username: '${{ secrets.DOCKER_IO_USERNAME }}'
+          password: '${{ secrets.DOCKER_IO_PASSWORD }}'
+      - run: './publish-alpine-amd64.sh'
