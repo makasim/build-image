@@ -4,8 +4,8 @@ on: ['push']
 
 # Env variable
 env:
-  DOCKER_IO_USER: '${{secrets.DOCKER_USER}}'
-  DOCKER_IO_PASSWORD: '${{secrets.DOCKER_PASSWORD}}'
+  DOCKER_IO_USER: '${{secrets.DOCKER_IO_USER}}'
+  DOCKER_IO_PASSWORD: '${{secrets.DOCKER_IO_PASSWORD}}'
 
 jobs:
   publish-debian-amd64-image:
