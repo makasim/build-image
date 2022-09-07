@@ -3,11 +3,15 @@
 set -x
 set -e
 
-[ -z "$1" ] && (echo "\$$1 is empty (dockerfile)"; exit 1)
-[ -z "$2" ] && (echo "\$$2 is empty (tag)"; exit 1)
+[ -z "$1" ] && (echo "\$$1 is empty (distro)"; exit 1)
+[ -z "$2" ] && (echo "\$$2 is empty (arch)"; exit 1)
+[ -z "$3" ] && (echo "\$$3 is empty (tag)"; exit 1)
 
-DOCKERFILE="$1"
-TAG="$2"
+DISTRO="$1"
+ARCH="$2"
+TAG="$3"
+
+DOCKERFILE="$DISTRO/$ARCH"
 
 source ./.env
 
