@@ -9,7 +9,7 @@ set -e
 DOCKERFILE="$1"
 TAG="$2"
 
-source ./.env
+. .env
 
 docker build \
     --build-arg "ALPINE_IMAGE=${ALPINE_IMAGE}" \
