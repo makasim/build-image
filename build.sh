@@ -11,8 +11,6 @@ DISTRO="$1"
 ARCH="$2"
 TAG="$3"
 
-DOCKERFILE="$DISTRO/$ARCH"
-
 source ./.env
 
 docker build \
@@ -32,4 +30,4 @@ docker build \
     --build-arg "DOCKER_COMPOSE_VERSION=${DOCKER_COMPOSE_VERSION}" \
     --build-arg "TASK_VERSION=${TASK_VERSION}" \
     -t "${TAG}" \
-    --rm --pull --force-rm - < "${DOCKERFILE}"
+    --rm --pull --force-rm - < "${DISTRO}/${ARCH}"
