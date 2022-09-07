@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: 'actions/checkout@v3'
     - run: 'docker login -u $DOCKER_IO_USER -p $DOCKER_IO_PASSWORD'
-    - run: './build debian/amd64/Dockerfile docker.io/makasim/build-image:$(printf '%s' "$GITHUB_SHA" | cut -c -8)"-debian-arm64'
+    - run: './publish-debian-arm64.sh'
