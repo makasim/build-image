@@ -35,6 +35,9 @@ RUN curl -SL "https://github.com/docker/compose/releases/download/${DOCKER_COMPO
 RUN chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 RUN docker compose version
 
+ARG GOVULNCHECKV
+RUN go install "golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECKV}"
+
 ARG GOLANGCI_VERSION
 RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | \
     sh -s -- -b $GOPATH/bin "${GOLANGCI_VERSION}" \

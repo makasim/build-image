@@ -23,6 +23,7 @@ docker build \
     --build-arg "DEBIAN_ARM64_IMAGE=${DEBIAN_ARM64_IMAGE}" \
     --build-arg "GO_DEBIAN_ARM64_IMAGE=${GO_DEBIAN_ARM64_IMAGE}" \
     --build-arg "GOLANGCI_VERSION=${GOLANGCI_VERSION}" \
+    --build-arg "GOVULNCHECKV=${GOVULNCHECKV}" \
     --build-arg "STATICCHECK_VERSION=${STATICCHECK_VERSION}" \
     --build-arg "GOTEST_VERSION=${GOTEST_VERSION}" \
     --build-arg "DBMATE_VERSION=${DBMATE_VERSION}" \
