@@ -65,3 +65,5 @@ RUN TAG=$TASK_VERSION sh -c "$(curl --location https://taskfile.dev/install.sh)"
 
 ARG REFLEX_VERSION
 RUN go install "github.com/cespare/reflex@${REFLEX_VERSION}"
+
+ADD waitfor.sh /usr/bin/waitfor
