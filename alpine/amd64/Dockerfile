@@ -62,3 +62,6 @@ RUN curl -fsSL -o /usr/bin/dbmate "https://github.com/amacneil/dbmate/releases/d
 ARG TASK_VERSION
 RUN TAG=$TASK_VERSION sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin \
     && task --version
+
+ARG REFLEX_VERSION
+RUN go install "github.com/cespare/reflex@${REFLEX_VERSION}"
